@@ -1,0 +1,21 @@
+[
+{
+  "modid": "RandomTP",
+  "name": "Random Teleport",
+  "description": "Adds functionality for randomly teleporting players",
+  "version": "0.1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "TygreWolf"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
