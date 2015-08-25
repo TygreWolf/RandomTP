@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -20,6 +19,7 @@ public class RandomTPCommand extends CommandBase
     private static List<CommandBase> modCommands = new ArrayList<CommandBase>();
     private static List<String> commands = new ArrayList<String>();
     private static List<Block> invalidBlocks = new ArrayList<Block>();
+    private static List<Block> validBlocks = new ArrayList<Block>();
     private static Random rand = new Random();
 
     @Override
@@ -51,7 +51,7 @@ public class RandomTPCommand extends CommandBase
 
     private static void teleport(EntityPlayerMP player)
     {
-        int y=-1;
+        int y;
         int x;
         int z;
 
@@ -66,7 +66,7 @@ public class RandomTPCommand extends CommandBase
 
     private static void teleport(EntityPlayerSP player)
     {
-        int y=-1;
+        int y;
         int x;
         int z;
 
@@ -83,9 +83,12 @@ public class RandomTPCommand extends CommandBase
     {
         for (int y = 60; y < 256; y++ )
         {
-            if (world.isAirBlock(x, y, z) && world.isAirBlock(x, y+1, z) && world.blockExists(x, y-1, z));
+            if (world.isAirBlock(x, y, z) && world.isAirBlock(x, y+1, z) && world.blockExists(x, y-1, z))
             {
-                return y;
+                if (isValidBlock(world, x, y-1, z))
+                {
+                    return y;
+                }
             }
         }
         return -1;
@@ -93,13 +96,27 @@ public class RandomTPCommand extends CommandBase
 
     private static Boolean isValidBlock(World world, int x, int y, int z)
     {
-        return invalidBlocks.contains(world.getBlock(x, y, z));
+        return validBlocks.contains(world.getBlock(x, y, z));
     }
 
     static
     {
-        invalidBlocks.add(Blocks.lava);
-        invalidBlocks.add(Blocks.water);
+        validBlocks.add(Blocks.dirt);
+        validBlocks.add(Blocks.sand);
+        validBlocks.add(Blocks.sandstone);
+        validBlocks.add(Blocks.grass);
+        validBlocks.add(Blocks.stone);
+        validBlocks.add(Blocks.cobblestone);
+        validBlocks.add(Blocks.gravel);
+        validBlocks.add(Blocks.clay);
+        validBlocks.add(Blocks.hardened_clay);
+        validBlocks.add(Blocks.mycelium);
+        validBlocks.add(Blocks.brown_mushroom_block);
+        validBlocks.add(Blocks.ice);
+        validBlocks.add(Blocks.packed_ice);
+        validBlocks.add(Blocks.snow);
+        validBlocks.add(Blocks.snow_layer);
+        validBlocks.add(Blocks.leaves);
     }
 
 
