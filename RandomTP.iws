@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ecd00d3-9cc5-4a8f-b031-642c5eb6c9ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RandomTP.ipr" afterPath="$PROJECT_DIR$/RandomTP.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RandomTP.iws" afterPath="$PROJECT_DIR$/RandomTP.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tygrewolf/randomtp/command/RandomTPCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/tygrewolf/randomtp/command/RandomTPCommand.java" />
     </list>
     <ignored path="RandomTP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -549,6 +547,13 @@
       <option name="number" value="Default" />
       <updated>1429191361091</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated valid block list">
+      <created>1440530101982</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1440530101982</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -592,7 +597,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Updated valid block list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated valid block list" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
