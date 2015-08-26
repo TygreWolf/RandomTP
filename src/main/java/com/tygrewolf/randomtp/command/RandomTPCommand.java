@@ -58,7 +58,7 @@ public class RandomTPCommand extends CommandBase
         do {
             x = rand.nextInt(100000);
             z = rand.nextInt(100000);
-            y = getGroundLevel(player.getEntityWorld(), x, z);
+            y = getSafeYPosition(player.getEntityWorld(), x, z);
         } while (y == -1);
 
         player.setPositionAndUpdate(x, y, z);
@@ -70,31 +70,35 @@ public class RandomTPCommand extends CommandBase
         int x;
         int z;
 
+        //TODO: Update this to fail at some point.
         do {
             x = rand.nextInt(100000);
             z = rand.nextInt(100000);
-            y = getGroundLevel(player.getEntityWorld(), x, z);
+            y = getSafeYPosition(player.getEntityWorld(), x, z);
         } while (y == -1);
 
         player.setPositionAndUpdate(x, y, z);
     }
 
-    private static int getGroundLevel(World world, int x, int z)
+    private static int getSafeYPosition(World world, int x, int z)
     {
-        for (int y = 60; y < 256; y++ )
+        for (int y = 60; y <256; y++)
         {
-            if (world.isAirBlock(x, y, z) && world.isAirBlock(x, y+1, z) && world.blockExists(x, y-1, z))
+            //Check to see if feet and head blocks are air
+            if (world.isAirBlock(x, y, z) && world.isAirBlock(x, y+1, z))
             {
-                if (isValidBlock(world, x, y-1, z))
+                //Check if block to stand on exists and is in valid list
+                if (world.blockExists(x, y-1, z) && isValidStandBlock(world, x, y-1, z))
                 {
                     return y;
                 }
             }
         }
+
         return -1;
     }
 
-    private static Boolean isValidBlock(World world, int x, int y, int z)
+    private static Boolean isValidStandBlock(World world, int x, int y, int z)
     {
         return validBlocks.contains(world.getBlock(x, y, z));
     }
