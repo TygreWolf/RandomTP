@@ -1,5 +1,7 @@
 package com.tygrewolf.randomtp.proxy;
 
-public class ClientProxy extends CommonProxy
-{
+/**
+ * Created by TygreWolf on 4/19/2016.
+ */
+public class ClientProxy extends CommonProxy {
 }

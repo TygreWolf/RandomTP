@@ -1,11 +1,14 @@
 package com.tygrewolf.randomtp.utility;
 
 import com.tygrewolf.randomtp.reference.Reference;
-import cpw.mods.fml.common.FMLLog;
+import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 
-public class LogHelper
-{
+/**
+ * Created by TygreWolf on 4/19/2016.
+ */
+public class LogHelper {
+
     public static void log(Level logLevel, Object object)
     {
         FMLLog.log(Reference.MOD_NAME, logLevel, String.valueOf(object));

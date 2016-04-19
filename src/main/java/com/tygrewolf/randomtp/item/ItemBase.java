@@ -1,15 +1,19 @@
 package com.tygrewolf.randomtp.item;
 
+import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 import com.tygrewolf.randomtp.creativetab.CreativeTabRandomTP;
 import com.tygrewolf.randomtp.reference.Reference;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.client.renderer.texture.IIconCreator;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemBase extends Item
-{
+/**
+ * Created by TygreWolf on 4/19/2016.
+ */
+public class ItemBase extends Item {
+
     public ItemBase()
     {
         super();
@@ -19,7 +23,7 @@ public class ItemBase extends Item
     @Override
     public String getUnlocalizedName()
     {
-        return String.format("item.%s%s", Reference.MOD_ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        return String.format("item.%s%s", Reference.LOWERCASE_MOD_ID + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
     @Override
@@ -28,16 +32,23 @@ public class ItemBase extends Item
         return getUnlocalizedName();
     }
 
-    @Override
+    //TODO: Fix icon registration
+    //@Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister iconRegister)
+    public void registerIcons(IIconCreator iconCreator)
     {
-        itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+
+        //itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)
     {
         return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
+    }
+
+    public static void setItemName(Item item, String itemName) {
+        item.setRegistryName(itemName);
+        item.setUnlocalizedName(item.getRegistryName().toString());
     }
 
 }

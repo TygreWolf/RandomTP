@@ -1,5 +1,7 @@
 package com.tygrewolf.randomtp.proxy;
 
-public interface IProxy
-{
+/**
+ * Created by TygreWolf on 4/19/2016.
+ */
+public interface IProxy {
 }

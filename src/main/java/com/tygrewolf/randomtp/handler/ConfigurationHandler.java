@@ -1,29 +1,28 @@
 package com.tygrewolf.randomtp.handler;
 
 import com.tygrewolf.randomtp.reference.Reference;
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
 
-public class ConfigurationHandler
-{
+/**
+ * Created by TygreWolf on 4/19/2016.
+ */
+public class ConfigurationHandler {
+
     public static Configuration configuration;
 
-    public static void init(File configFile)
-    {
-        if (configuration == null)
-        {
+    public static void init(File configFile) {
+        if (configuration == null) {
             configuration = new Configuration(configFile);
             loadConfiguration();
         }
     }
 
-    private static void loadConfiguration()
-    {
-        if (configuration.hasChanged())
-        {
+    private static void loadConfiguration() {
+        if (configuration.hasChanged()) {
             configuration.save();
         }
     }
@@ -31,7 +30,7 @@ public class ConfigurationHandler
     @SubscribeEvent
     public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
-        if (event.modID.equalsIgnoreCase(Reference.MOD_ID))
+        if (event.getModID().equalsIgnoreCase(Reference.MOD_ID))
         {
             loadConfiguration();
         }
