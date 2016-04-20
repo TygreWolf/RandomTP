@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "randomtp",
+  "name": "Random Teleport",
+  "description": "Provides teleportation to random coordinates and dimensions.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["TygreWolf"],
+  "credits": "Coffee.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

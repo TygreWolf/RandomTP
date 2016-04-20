@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RandomTP.iml" filepath="$PROJECT_DIR$/.idea/modules/RandomTP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RandomTP_api.iml" filepath="$PROJECT_DIR$/.idea/modules/RandomTP_api.iml" group="RandomTP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RandomTP_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RandomTP_main.iml" group="RandomTP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RandomTP_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RandomTP_test.iml" group="RandomTP" />
+    </modules>
+  </component>
+</project>

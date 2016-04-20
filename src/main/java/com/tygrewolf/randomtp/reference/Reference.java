@@ -4,7 +4,7 @@ package com.tygrewolf.randomtp.reference;
  * Created by TygreWolf on 4/19/2016.
  */
 public class Reference {
-    public static final String MOD_ID = "RandomTP";
+    public static final String MOD_ID = "randomtp";
     public static final String MOD_NAME = "Random Teleport";
     public static final String LOWERCASE_MOD_ID = MOD_ID.toLowerCase();
     public static final String FINGERPRINT = "@FINGERPRINT@";
