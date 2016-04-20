@@ -7,6 +7,7 @@ public final class Names {
 
     public static final class Commands
     {
-        public static final String BASE_COMMAND = Reference.LOWERCASE_MOD_ID;
+        public static final String RANDOM_TELEPORT = "rtp";
+        public static final String BACK = "back";
     }
 }
