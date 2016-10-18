@@ -17,12 +17,16 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-version = "1.10.2-0.1.0"
-group= "com.tygrewolf.randomtp" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "randomtp"
+version = rtpversion + "-" + rtpchannel + "-" + rtpbuild
+group= rtpgroup
+archivesBaseName = rtpbasename
 
 minecraft {
     version = minecraft_version + "-" + forge_version
+
+    replace "@version@", project.version
+
+    // used when launching minecraft in a dev environment.
     runDir = "run"
     mappings = mcp_mappings
 }
