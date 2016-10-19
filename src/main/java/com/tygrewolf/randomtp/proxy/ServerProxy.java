@@ -1,7 +1,21 @@
 package com.tygrewolf.randomtp.proxy;
 
-/**
- * Created by TygreWolf on 4/19/2016.
- */
-public class ServerProxy extends CommonProxy {
+import com.tygrewolf.randomtp.init.ModItems;
+
+public class ServerProxy implements ICommonProxy {
+
+    @Override
+    public void preInit() {
+
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void postInit() {
+
+    }
 }
